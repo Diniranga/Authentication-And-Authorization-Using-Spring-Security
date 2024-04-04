@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="posGateway">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
+<dataSource name="Auth">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.51">
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||root||ALTER|G
+      <Grants>|root||root||ALLOW_NONEXISTENT_DEFINER|G
+|root||root|localhost|ALLOW_NONEXISTENT_DEFINER|G
+|root||root||ALTER|G
 |root||root|localhost|ALTER|G
 |root||root||ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
@@ -124,8 +126,8 @@
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root||SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root||SET_USER_ID|G
-|root||root|localhost|SET_USER_ID|G
+|root||root||SET_ANY_DEFINER|G
+|root||root|localhost|SET_ANY_DEFINER|G
 |root||root||SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
 |root||root||SHOW VIEW|G
@@ -150,6 +152,8 @@
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
 |root||root||TELEMETRY_LOG_ADMIN|G
 |root||root|localhost|TELEMETRY_LOG_ADMIN|G
+|root||root||TRANSACTION_GTID_TAG|G
+|root||root|localhost|TRANSACTION_GTID_TAG|G
 |root||root||TRIGGER|G
 |root||root|localhost|TRIGGER|G
 |root||root||UPDATE|G
@@ -160,7 +164,7 @@
 |root||root|localhost|grant option|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.1.0</ServerVersion>
+      <ServerVersion>8.3.0</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1061,84 +1065,80 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="287" parent="1" name="utf8mb4_zh_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="288" parent="1" name="information_schema">
+    <schema id="288" parent="1" name="auth">
+      <LastIntrospectionLocalTimestamp>2024-04-04.09:57:25</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="289" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="mysql">
+    <schema id="290" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="290" parent="1" name="performance_schema">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="291" parent="1" name="posGateway">
-      <IntrospectionTimestamp>2023-11-05.21:23:03</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-05.15:53:03</LocalIntrospectionTimestamp>
+    <schema id="291" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="user_gateway">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <user id="294" parent="1" name="mysql.infoschema">
+    <user id="293" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="295" parent="1" name="mysql.session">
+    <user id="294" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.sys">
+    <user id="295" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="296" parent="1" name="root">
       <Plugin>caching_sha2_password</Plugin>
     </user>
     <user id="297" parent="1" name="root">
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="298" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="299" parent="291" name="user">
+    <table id="298" parent="288" name="user">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="300" parent="299" name="id">
-      <AutoIncrement>2</AutoIncrement>
+    <column id="299" parent="298" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="301" parent="299" name="email">
+    <column id="300" parent="298" name="email">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="302" parent="299" name="first_name">
+    <column id="301" parent="298" name="first_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="303" parent="299" name="last_name">
+    <column id="302" parent="298" name="last_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="304" parent="299" name="password">
+    <column id="303" parent="298" name="password">
       <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="305" parent="299" name="role">
+    <column id="304" parent="298" name="role">
       <DasType>enum(&apos;ADMIN&apos;, &apos;USER&apos;)|0e</DasType>
       <Position>6</Position>
     </column>
-    <index id="306" parent="299" name="PRIMARY">
+    <index id="305" parent="298" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="307" parent="299" name="PRIMARY">
+    <key id="306" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

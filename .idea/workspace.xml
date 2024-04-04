@@ -4,73 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6b06cd-e2f8-490b-98dd-e4264687a0d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Auth/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Auth/AuthenticationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Auth/AuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Auth/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Auth/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Config/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Config/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/Demo/DemoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/PosGatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/User/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/User/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ead/posgateway/User/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ead/posgateway/PosGatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Authentication-And-Authorization-Using-Spring-Security.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Security/ApplicationSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Security/ApplicationUserPermission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Security/ApplicationUserRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Security/PasswordConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Student/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Student/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/Student/StudentManagementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/auth/ApplicationUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/auth/ApplicationUserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/auth/ApplicationUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/auth/FakeApplicationUserDaoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/TemplateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/cources.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/DemoApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Security/ApplicationSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Security/ApplicationUserPermission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Security/ApplicationUserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Security/PasswordConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Student/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Student/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/Student/StudentManagementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/auth/ApplicationUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/auth/ApplicationUserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/auth/ApplicationUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/auth/FakeApplicationUserDaoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/demo/controller/TemplateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/templates/cources.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/test-classes/com/example/demo/DemoApplicationTests.class" beforeDir="false" />
+    <list default="true" id="ac6b06cd-e2f8-490b-98dd-e4264687a0d3" name="Changes" comment="added .gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2f776370-8ecc-4632-a1b8-63fb00635017.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2f776370-8ecc-4632-a1b8-63fb00635017.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2f776370-8ecc-4632-a1b8-63fb00635017/storage_v2/_src_/schema/posGateway.UKXnKw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2f776370-8ecc-4632-a1b8-63fb00635017/storage_v2/_src_/schema/posGateway.UKXnKw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/AuthenticationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/AuthenticationRequest$AuthenticationRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/AuthenticationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/AuthenticationResponse$AuthenticationResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/AuthenticationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/RegisterRequest$RegisterRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Auth/RegisterRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Config/ApplicationConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Config/JwtAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Config/JwtService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Config/SecurityConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/Demo/DemoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/PosGatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/User/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/User/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/User/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ead/posgateway/User/UserRepository.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +58,7 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2XlE1zCIBoDMIwiNcvGJyAz4uUF" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -117,13 +76,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.PosGatewayApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Spring-Boot-(>3.0)+JWT+Authentication+Authorization",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/diniranga/Documents/GitHub/Authentication-And-Authorization-Using-Spring-Security",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
@@ -135,6 +97,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ead.posgateway.Auth" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Authentication-And-Authorization-Using-Spring-Security" />
@@ -157,6 +124,13 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-3c5dfc45" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -169,7 +143,33 @@
       <workItem from="1699195409089" duration="91000" />
       <workItem from="1699195517752" duration="683000" />
       <workItem from="1699198469647" duration="859000" />
+      <workItem from="1712224426849" duration="2236000" />
     </task>
+    <task id="LOCAL-00001" summary="added token validation">
+      <option name="closed" value="true" />
+      <created>1712225945805</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712225945805</updated>
+    </task>
+    <task id="LOCAL-00002" summary="catch the error when validate tokens that are not in proper format and length">
+      <option name="closed" value="true" />
+      <created>1712226545798</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712226545798</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added .gitignore">
+      <option name="closed" value="true" />
+      <created>1712226605267</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712226605267</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,5 +177,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added token validation" />
+    <MESSAGE value="catch the error when validate tokens that are not in proper format and length" />
+    <MESSAGE value="added .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .gitignore" />
   </component>
 </project>
