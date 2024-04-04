@@ -7,6 +7,8 @@ import com.ead.posgateway.User.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,8 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final UserDetailsService userDetailsService;
+
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
                 .firstName(request.getFirstName())
@@ -46,5 +50,10 @@ public class AuthenticationService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public boolean validateToken(String token, String userEmail) {
+        UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
+        return jwtService.isTokenValid(token,userDetails);
     }
 }

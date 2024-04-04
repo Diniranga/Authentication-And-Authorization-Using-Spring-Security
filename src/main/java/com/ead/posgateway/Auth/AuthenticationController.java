@@ -27,4 +27,9 @@ public class AuthenticationController {
     ){
         return ResponseEntity.ok(service.authenticate(request));
     }
+
+    @PostMapping("/validateToken")
+    public boolean validateToken(@RequestBody TokenValidationRequest tokenValidationRequest){
+        return service.validateToken(tokenValidationRequest.getToken(), tokenValidationRequest.getEmail());
+    }
 }
