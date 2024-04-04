@@ -38,6 +38,9 @@ public class JwtService {
 
     public <T>T extractClaim(String jwtToken, Function<Claims,T> claimResolver){
         final Claims claims = extractAllClaims(jwtToken);
+        if(claims==null){
+            return null;
+        }
         return claimResolver.apply(claims);
     }
 
@@ -47,6 +50,9 @@ public class JwtService {
 
     public boolean isTokenValid(String jwtToken,UserDetails userDetails){
         final String userName = extractUserEmail(jwtToken);
+        if(userName == null){
+            return false;
+        }
         return (userName.equals(userDetails.getUsername())) && !isTokenExpired(jwtToken);
     }
 
@@ -59,13 +65,18 @@ public class JwtService {
     }
 
     private Claims extractAllClaims(String jwtToken) {
-        return Jwts
-                .parserBuilder()
-                .setSigningKey(getSignInKey())
-                .build()
-                .parseClaimsJws(jwtToken)
-                .getBody();
+        try {
+            return Jwts
+                    .parserBuilder()
+                    .setSigningKey(getSignInKey())
+                    .build()
+                    .parseClaimsJws(jwtToken)
+                    .getBody();
+        } catch (Exception e) {
+            return null;
+        }
     }
+
 
     private Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
