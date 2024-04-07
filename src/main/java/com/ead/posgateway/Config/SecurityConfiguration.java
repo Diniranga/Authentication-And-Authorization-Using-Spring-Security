@@ -14,6 +14,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import static com.ead.posgateway.User.Permissions.USER_READ;
 import static com.ead.posgateway.User.Role.ADMIN;
 
+import static com.ead.posgateway.User.Permissions.USER_READ;
+import static com.ead.posgateway.User.Role.ADMIN;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
