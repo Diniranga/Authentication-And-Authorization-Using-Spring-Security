@@ -12,3 +12,11 @@ spring:
       format_sql: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
+
+  application:
+    security:
+      jwt:
+        secret-key: JsNVm2juYWzy78yatVOCZUnttbBxKjIuZmAuO/PMnaY+VM2nT6F8Z6N3MGaULriP
+        expiration: 60000
+        refresh-token:
+          expiration: 604800000 #7 days
