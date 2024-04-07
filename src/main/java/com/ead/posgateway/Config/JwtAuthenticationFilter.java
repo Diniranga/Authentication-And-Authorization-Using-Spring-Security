@@ -1,5 +1,6 @@
 package com.ead.posgateway.Config;
 
+import com.ead.posgateway.token.TokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,8 +22,8 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-
     private final UserDetailsService userDetailsService;
+    private final TokenRepository tokenRepository;
 
     @Override
     protected void doFilterInternal(
@@ -32,15 +33,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
         final String jwtToken;
+        final String userEmail;
         if(authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         } else {
             jwtToken = authHeader.substring(7);
-            final String userEmail = jwtService.extractUserEmail(jwtToken);
+            userEmail = jwtService.extractUserEmail(jwtToken);
             if(userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null){
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
-                if(jwtService.isTokenValid(jwtToken,userDetails)){
+                var isTokenValid = tokenRepository.findByToken(jwtToken)
+                        .map(t -> !t.isExpired() && !t.isRevoked())
+                        .orElse(false);
+                if(jwtService.isTokenValid(jwtToken,userDetails) && isTokenValid){
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                             userDetails,
                             null,
