@@ -4,13 +4,11 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.ead.posgateway.User.Permissions.*;
+import static com.ead.posgateway.User.Permission.*;
 
 @RequiredArgsConstructor
 public enum Role {
@@ -18,19 +16,27 @@ public enum Role {
             ADMIN_READ,
             ADMIN_CREATE,
             ADMIN_UPDATE,
-            ADMIN_DELETE
+            ADMIN_DELETE,
+            USER_CREATE,
+            USER_UPDATE,
+            USER_READ,
+            USER_DELETE
     )),
-    USER(Collections.emptySet())
-    ;
+    USER(Set.of(
+            USER_CREATE,
+            USER_UPDATE,
+            USER_READ,
+            USER_DELETE
+    ));
 
     @Getter
-    private final Set<Permissions> permissions;
+    private final Set<Permission> permissions;
 
     public List<SimpleGrantedAuthority> getUserAuthorities() {
         var authorities = getPermissions()
                 .stream()
-                .map(permission -> new SimpleGrantedAuthority(permission.name()))
-                .toList();
+                .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))
+                .collect(Collectors.toList());
         authorities.add(new SimpleGrantedAuthority("ROLE_" + this.name()));
         return authorities;
     }

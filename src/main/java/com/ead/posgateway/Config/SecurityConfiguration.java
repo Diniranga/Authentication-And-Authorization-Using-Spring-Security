@@ -3,23 +3,23 @@ package com.ead.posgateway.Config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import static com.ead.posgateway.User.Permissions.USER_READ;
-import static com.ead.posgateway.User.Role.ADMIN;
+import static com.ead.posgateway.User.Permission.*;
+import static com.ead.posgateway.User.Role.*;
+import static org.springframework.http.HttpMethod.*;
 
-import static com.ead.posgateway.User.Permissions.USER_READ;
-import static com.ead.posgateway.User.Role.ADMIN;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
+@EnableMethodSecurity
 public class SecurityConfiguration {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
@@ -32,10 +32,13 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/**")
-                    .permitAll()
-                .requestMatchers("/demo").hasAnyRole(ADMIN.name())
-                .requestMatchers(HttpMethod.GET, "/demo/**").hasAnyAuthority(USER_READ.name())
+                .requestMatchers("/auth/**").permitAll()
+
+                .requestMatchers("/demo/**").hasAnyRole(ADMIN.name(), USER.name())
+
+                .requestMatchers(GET, "/demo/**").hasAnyAuthority(USER_READ.getPermission())
+                .requestMatchers(POST, "/demo/**").hasAnyAuthority(ADMIN_READ.getPermission())
+
                 .anyRequest()
                     .authenticated()
                 .and()
